@@ -1,12 +1,17 @@
-const express = require('express');
+import express from 'express';
+import path from 'path';
+import posts from './routes/posts.js';
 const app = express();
+const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.sendFile()
-});
+// Body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.get('/about', (req, res) => {
-    res.send({ message: 'Hello about' });
-})
+// Setup static folder
+// app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(8000, () => console.log(`Server is running on port 8000`));
+// Routes
+app.use('/api/posts', posts);
+
+app.listen(port, () => console.log(`Server is running on port ${port}`));

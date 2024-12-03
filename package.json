@@ -2,9 +2,10 @@
   "name": "express-crash",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node server",
-    "dev": "node --watch server"
+    "dev": "node --watch --env-file=.env server"
   },
   "keywords": [],
   "author": "",
