@@ -6,6 +6,17 @@
     <title>Home page</title>
 </head>
 <body style="background-color: lightslategray;">
-    <h1>Welcome to the page</h1>
+    <h1>Posts</h1>
+
+    <form id="add-post-form">
+        <label for="title">Title: </label><br>
+        <input type="text" id="title" name="title"><br>
+        <button type="submit">Add post</button>
+    </form>
+
+    <button id="get-posts-btn">Get posts</button>
+    <div id="output"></div>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
